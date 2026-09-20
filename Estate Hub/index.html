@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EstateHub | Real Estate Listing Platform</title>
+
+    <link rel="stylesheet" href="index.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        <i class="fa-solid fa-house"></i>
+        <span>EstateHub</span>
+    </div>
+
+    <nav class="nav-menu" id="navMenu">
+
+        <a href="#home">Home</a>
+        <a href="#properties">Properties</a>
+        <a href="#categories">Categories</a>
+        <a href="#favorites">Favorites</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+    <div class="nav-actions">
+
+        <button class="list-property-btn" id="openListingBtn">
+            <i class="fa-solid fa-plus"></i>
+            List Your Property
+        </button>
+
+        <button class="login-btn" id="loginBtn">
+            <i class="fa-solid fa-user"></i>
+            Login
+        </button>
+
+        <button class="menu-toggle" id="menuToggle">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     HOME
+========================= -->
+
+<section id="home" class="hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <p class="hero-small-title">
+            WELCOME TO ESTATEHUB
+        </p>
+
+        <h1>
+            Find Your Perfect
+            <span>Home</span>
+        </h1>
+
+        <p class="hero-description">
+            Discover properties that match your lifestyle,
+            budget and location.
+        </p>
+
+        <div class="listing-toggle">
+
+            <button class="toggle-btn active" data-listing="Buy">
+                Buy
+            </button>
+
+            <button class="toggle-btn" data-listing="Rent">
+                Rent
+            </button>
+
+        </div>
+
+
+        <div class="home-search">
+
+            <div class="search-field">
+                <label>Location</label>
+
+                <select id="homeLocation">
+                    <option value="">Any Location</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Bengaluru">Bengaluru</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Mumbai">Mumbai</option>
+                </select>
+            </div>
+
+
+            <div class="search-field">
+                <label>Property Type</label>
+
+                <select id="homeType">
+                    <option value="">Any Type</option>
+                    <option value="Apartment">Apartment</option>
+                    <option value="House">House</option>
+                    <option value="Villa">Villa</option>
+                    <option value="Plot">Plot</option>
+                    <option value="Commercial">Commercial</option>
+                </select>
+            </div>
+
+
+            <div class="search-field">
+                <label>Budget</label>
+
+                <select id="homeBudget">
+                    <option value="">Any Budget</option>
+                    <option value="50">Under ₹50 L</option>
+                    <option value="100">₹50 L - ₹1 Cr</option>
+                    <option value="200">₹1 Cr - ₹2 Cr</option>
+                    <option value="201">Above ₹2 Cr</option>
+                </select>
+            </div>
+
+
+            <div class="search-field">
+                <label>Bedrooms</label>
+
+                <select id="homeBedrooms">
+                    <option value="">Any</option>
+                    <option value="1">1+</option>
+                    <option value="2">2+</option>
+                    <option value="3">3+</option>
+                    <option value="4">4+</option>
+                </select>
+            </div>
+
+
+            <button class="search-btn" id="homeSearchBtn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Search
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     QUICK FEATURES
+========================= -->
+
+<section class="quick-features">
+
+    <div class="quick-feature">
+        <i class="fa-solid fa-shield-halved"></i>
+
+        <div>
+            <h3>Trusted Listings</h3>
+            <p>Explore quality properties</p>
+        </div>
+    </div>
+
+
+    <div class="quick-feature">
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <div>
+            <h3>Easy Search</h3>
+            <p>Find your dream home faster</p>
+        </div>
+    </div>
+
+
+    <div class="quick-feature">
+        <i class="fa-solid fa-scale-balanced"></i>
+
+        <div>
+            <h3>Compare Properties</h3>
+            <p>Make informed decisions</p>
+        </div>
+    </div>
+
+
+    <div class="quick-feature">
+        <i class="fa-solid fa-calculator"></i>
+
+        <div>
+            <h3>EMI Calculator</h3>
+            <p>Plan your finances easily</p>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FEATURED PROPERTIES
+========================= -->
+
+<section class="section featured-section">
+
+    <div class="section-heading">
+
+        <div>
+
+            <p class="section-label">
+                HANDPICKED FOR YOU
+            </p>
+
+            <h2>
+                Featured <span>Properties</span>
+            </h2>
+
+            <p>
+                Explore some of our popular property listings.
+            </p>
+
+        </div>
+
+        <a href="#properties" class="view-all">
+            View All Properties →
+        </a>
+
+    </div>
+
+    <div class="property-grid" id="featuredProperties"></div>
+
+</section>
+
+
+<!-- =========================
+     CATEGORIES
+========================= -->
+
+<section id="categories" class="section categories-section">
+
+    <div class="section-heading centered">
+
+        <p class="section-label">
+            EXPLORE
+        </p>
+
+        <h2>
+            Property <span>Categories</span>
+        </h2>
+
+        <p>
+            Choose a property type that suits your needs.
+        </p>
+
+    </div>
+
+
+    <div class="category-grid">
+
+        <div class="category-card" data-category="Apartment">
+
+            <div class="category-image">
+                <i class="fa-solid fa-building"></i>
+            </div>
+
+            <div class="category-content">
+
+                <h3>Apartments</h3>
+
+                <p>
+                    Modern living spaces
+                </p>
+
+                <button>
+                    Explore →
+                </button>
+
+                <span class="category-count">
+                    Explore listings
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="category-card" data-category="House">
+
+            <div class="category-image">
+                <i class="fa-solid fa-house"></i>
+            </div>
+
+            <div class="category-content">
+
+                <h3>Houses</h3>
+
+                <p>
+                    Comfortable family homes
+                </p>
+
+                <button>
+                    Explore →
+                </button>
+
+                <span class="category-count">
+                    Explore listings
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="category-card" data-category="Villa">
+
+            <div class="category-image">
+                <i class="fa-solid fa-house-chimney"></i>
+            </div>
+
+            <div class="category-content">
+
+                <h3>Villas</h3>
+
+                <p>
+                    Luxury and privacy
+                </p>
+
+                <button>
+                    Explore →
+                </button>
+
+                <span class="category-count">
+                    Explore listings
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="category-card" data-category="Plot">
+
+            <div class="category-image">
+                <i class="fa-solid fa-location-dot"></i>
+            </div>
+
+            <div class="category-content">
+
+                <h3>Plots</h3>
+
+                <p>
+                    Build your future
+                </p>
+
+                <button>
+                    Explore →
+                </button>
+
+                <span class="category-count">
+                    Explore listings
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="category-card" data-category="Commercial">
+
+            <div class="category-image">
+                <i class="fa-solid fa-city"></i>
+            </div>
+
+            <div class="category-content">
+
+                <h3>Commercial</h3>
+
+                <p>
+                    Business opportunities
+                </p>
+
+                <button>
+                    Explore →
+                </button>
+
+                <span class="category-count">
+                    Explore listings
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROPERTIES
+========================= -->
+
+<section id="properties" class="section properties-section">
+
+    <div class="section-heading">
+
+        <div>
+
+            <p class="section-label">
+                DISCOVER
+            </p>
+
+            <h2>
+                Explore <span>Properties</span>
+            </h2>
+
+            <p>
+                Find properties that match your requirements.
+            </p>
+
+        </div>
+
+
+        <div class="sort-box">
+
+            <label for="sortProperties">
+                Sort:
+            </label>
+
+            <select id="sortProperties">
+
+                <option value="default">
+                    Recommended
+                </option>
+
+                <option value="low">
+                    Price: Low to High
+                </option>
+
+                <option value="high">
+                    Price: High to Low
+                </option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+
+    <div class="property-filters">
+
+        <div class="property-toggle">
+
+            <button class="property-listing-btn active"
+                    data-listing="All">
+                All
+            </button>
+
+            <button class="property-listing-btn"
+                    data-listing="Buy">
+                Buy
+            </button>
+
+            <button class="property-listing-btn"
+                    data-listing="Rent">
+                Rent
+            </button>
+
+        </div>
+
+
+        <select id="filterLocation">
+
+            <option value="">
+                All Locations
+            </option>
+
+            <option value="Hyderabad">
+                Hyderabad
+            </option>
+
+            <option value="Bengaluru">
+                Bengaluru
+            </option>
+
+            <option value="Chennai">
+                Chennai
+            </option>
+
+            <option value="Mumbai">
+                Mumbai
+            </option>
+
+        </select>
+
+
+        <select id="filterType">
+
+            <option value="">
+                All Types
+            </option>
+
+            <option value="Apartment">
+                Apartment
+            </option>
+
+            <option value="House">
+                House
+            </option>
+
+            <option value="Villa">
+                Villa
+            </option>
+
+            <option value="Plot">
+                Plot
+            </option>
+
+            <option value="Commercial">
+                Commercial
+            </option>
+
+        </select>
+
+
+        <select id="filterBedrooms">
+
+            <option value="">
+                Bedrooms
+            </option>
+
+            <option value="1">
+                1+
+            </option>
+
+            <option value="2">
+                2+
+            </option>
+
+            <option value="3">
+                3+
+            </option>
+
+            <option value="4">
+                4+
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <div class="property-grid"
+         id="propertyGrid"></div>
+
+</section>
+
+
+<!-- =========================
+     FAVORITES
+========================= -->
+
+<section id="favorites"
+         class="section favorites-section">
+
+    <div class="section-heading">
+
+        <div>
+
+            <p class="section-label">
+                SAVED FOR LATER
+            </p>
+
+            <h2>
+                Your <span>Favorites</span>
+            </h2>
+
+            <p>
+                Properties you saved for quick access.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="property-grid"
+         id="favoriteGrid">
+
+        <div class="empty-state">
+
+            <i class="fa-regular fa-heart"></i>
+
+            <h3>
+                No Favorite Properties
+            </h3>
+
+            <p>
+                Save properties you love and find them here.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about"
+         class="section about-section">
+
+    <div class="about-container">
+
+        <div class="about-visual">
+
+            <div class="about-image-card">
+
+                <div class="about-icon">
+
+                    <i class="fa-solid fa-house"></i>
+
+                </div>
+
+                <div class="about-floating-card">
+
+                    <strong>
+                        500+
+                    </strong>
+
+                    <span>
+                        Property Listings
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="about-content">
+
+            <p class="section-label">
+                ABOUT ESTATEHUB
+            </p>
+
+            <h2>
+                Making Property Search
+                <span>Simple</span>
+            </h2>
+
+            <p class="about-text">
+                EstateHub is a real estate listing platform designed
+                to make property discovery simpler, faster and more
+                convenient.
+            </p>
+
+            <p class="about-text">
+                Users can browse properties, search using filters,
+                save favorites, compare properties and estimate
+                monthly EMI before making a decision.
+            </p>
+
+
+            <h3 class="why-title">
+                Why Choose EstateHub?
+            </h3>
+
+
+            <div class="about-features">
+
+                <div class="about-feature">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <span>
+                        Easy Property Discovery
+                    </span>
+
+                </div>
+
+
+                <div class="about-feature">
+
+                    <i class="fa-solid fa-scale-balanced"></i>
+
+                    <span>
+                        Property Comparison
+                    </span>
+
+                </div>
+
+
+                <div class="about-feature">
+
+                    <i class="fa-solid fa-heart"></i>
+
+                    <span>
+                        Personalized Favorites
+                    </span>
+
+                </div>
+
+
+                <div class="about-feature">
+
+                    <i class="fa-solid fa-calculator"></i>
+
+                    <span>
+                        EMI Estimation
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="about-stats">
+
+                <div class="about-stat">
+
+                    <strong>
+                        500+
+                    </strong>
+
+                    <span>
+                        Listings
+                    </span>
+
+                </div>
+
+
+                <div class="about-stat">
+
+                    <strong>
+                        5
+                    </strong>
+
+                    <span>
+                        Categories
+                    </span>
+
+                </div>
+
+
+                <div class="about-stat">
+
+                    <strong>
+                        4.8
+                    </strong>
+
+                    <span>
+                        User Rating
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         USER FEEDBACK
+    ========================= -->
+
+    <div class="feedback-wrapper">
+
+        <div class="section-heading centered">
+
+            <p class="section-label">
+                USER FEEDBACK
+            </p>
+
+            <h2>
+                What People <span>Say</span>
+            </h2>
+
+            <p>
+                Experiences from people exploring properties with EstateHub.
+            </p>
+
+        </div>
+
+
+        <div class="feedback-grid">
+
+            <article class="feedback-card">
+
+                <div class="feedback-stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    “The search filters made it easy to find properties
+                    according to my location and budget.”
+                </p>
+
+                <div class="feedback-user">
+
+                    <div class="feedback-avatar">
+                        A
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Ananya
+                        </strong>
+
+                        <small>
+                            Home Buyer
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="feedback-card">
+
+                <div class="feedback-stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    “Comparing properties and checking the EMI estimate
+                    in one place was really convenient.”
+                </p>
+
+                <div class="feedback-user">
+
+                    <div class="feedback-avatar">
+                        R
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Rahul
+                        </strong>
+
+                        <small>
+                            Property Seeker
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="feedback-card">
+
+                <div class="feedback-stars">
+                    ★★★★☆
+                </div>
+
+                <p>
+                    “The property cards give useful information without
+                    making the search feel complicated.”
+                </p>
+
+                <div class="feedback-user">
+
+                    <div class="feedback-avatar">
+                        S
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Sneha
+                        </strong>
+
+                        <small>
+                            Property Seeker
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact"
+         class="section contact-section">
+
+    <div class="section-heading centered">
+
+        <p class="section-label">
+            GET IN TOUCH
+        </p>
+
+        <h2>
+            Contact <span>EstateHub</span>
+        </h2>
+
+        <p>
+            Have a property inquiry? Get in touch with us.
+        </p>
+
+    </div>
+
+
+    <div class="contact-container">
+
+        <div class="contact-info">
+
+            <div class="contact-item">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <div>
+
+                    <h3>
+                        Location
+                    </h3>
+
+                    <p>
+                        Hyderabad, Telangana, India
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                <div>
+
+                    <h3>
+                        Email
+                    </h3>
+
+                    <p>
+                        estatehub@example.com
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <i class="fa-solid fa-phone"></i>
+
+                <div>
+
+                    <h3>
+                        Phone
+                    </h3>
+
+                    <p>
+                        +91 8838935857
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <form id="contactForm"
+              class="contact-form">
+
+            <div class="form-row">
+
+                <input type="text"
+                       id="contactName"
+                       placeholder="Your Name"
+                       required>
+
+                <input type="email"
+                       id="contactEmail"
+                       placeholder="Your Email"
+                       required>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <input type="tel"
+                       id="contactPhone"
+                       placeholder="Phone Number">
+
+                <input type="text"
+                       id="contactSubject"
+                       placeholder="Subject">
+
+            </div>
+
+
+            <textarea id="contactMessage"
+                      rows="6"
+                      placeholder="Your Message"
+                      required></textarea>
+
+
+            <button type="submit"
+                    class="primary-btn">
+
+                Send Message
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-brand">
+
+            <div class="logo">
+
+                <i class="fa-solid fa-house"></i>
+
+                EstateHub
+
+            </div>
+
+            <p>
+                Find. Compare. Decide.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <a href="#home">Home</a>
+            <a href="#properties">Properties</a>
+            <a href="#categories">Categories</a>
+            <a href="#favorites">Favorites</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Property Types
+            </h3>
+
+            <a href="#categories">
+                Apartments
+            </a>
+
+            <a href="#categories">
+                Houses
+            </a>
+
+            <a href="#categories">
+                Villas
+            </a>
+
+            <a href="#categories">
+                Plots
+            </a>
+
+            <a href="#categories">
+                Commercial
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Contact
+            </h3>
+
+            <p>
+                Hyderabad, India
+            </p>
+
+            <p>
+                estatehub@example.com
+            </p>
+
+            <p>
+                +91 8838935857
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 EstateHub. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     PROPERTY DETAILS MODAL
+========================= -->
+
+<div class="modal"
+     id="propertyModal">
+
+    <div class="modal-content property-modal">
+
+        <button class="close-modal">
+            &times;
+        </button>
+
+        <div id="propertyDetails"></div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     COMPARE MODAL
+========================= -->
+
+<div class="modal"
+     id="compareModal">
+
+    <div class="modal-content compare-modal">
+
+        <button class="close-modal">
+            &times;
+        </button>
+
+        <h2>
+            Compare <span>Properties</span>
+        </h2>
+
+        <div id="compareContent"></div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     EMI MODAL
+========================= -->
+
+<div class="modal"
+     id="emiModal">
+
+    <div class="modal-content emi-modal">
+
+        <button class="close-modal">
+            &times;
+        </button>
+
+        <h2>
+            EMI <span>Calculator</span>
+        </h2>
+
+        <form id="emiForm">
+
+            <label>
+                Property Price
+            </label>
+
+            <input type="number"
+                   id="propertyPrice"
+                   required>
+
+
+            <label>
+                Down Payment
+            </label>
+
+            <input type="number"
+                   id="downPayment"
+                   required>
+
+
+            <label>
+                Loan Period (Years)
+            </label>
+
+            <input type="number"
+                   id="loanPeriod"
+                   value="20"
+                   min="1"
+                   required>
+
+
+            <label>
+                Interest Rate (%)
+            </label>
+
+            <input type="number"
+                   id="interestRate"
+                   value="8.5"
+                   step="0.1"
+                   required>
+
+
+            <button type="submit"
+                    class="primary-btn">
+
+                Calculate EMI
+
+            </button>
+
+        </form>
+
+
+        <div id="emiResult"
+             class="emi-result"></div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     LIST PROPERTY MODAL
+========================= -->
+
+<div class="modal"
+     id="listingModal">
+
+    <div class="modal-content listing-modal">
+
+        <button class="close-modal">
+            &times;
+        </button>
+
+        <h2>
+            List Your <span>Property</span>
+        </h2>
+
+        <form id="listingForm">
+
+            <input type="text"
+                   id="listingTitle"
+                   placeholder="Property Title"
+                   required>
+
+
+            <select id="listingType"
+                    required>
+
+                <option value="">
+                    Property Type
+                </option>
+
+                <option value="Apartment">
+                    Apartment
+                </option>
+
+                <option value="House">
+                    House
+                </option>
+
+                <option value="Villa">
+                    Villa
+                </option>
+
+                <option value="Plot">
+                    Plot
+                </option>
+
+                <option value="Commercial">
+                    Commercial
+                </option>
+
+            </select>
+
+
+            <select id="listingMode"
+                    required>
+
+                <option value="">
+                    Listing Type
+                </option>
+
+                <option value="Buy">
+                    Buy
+                </option>
+
+                <option value="Rent">
+                    Rent
+                </option>
+
+            </select>
+
+
+            <input type="text"
+                   id="listingLocation"
+                   placeholder="Location"
+                   required>
+
+
+            <input type="number"
+                   id="listingPrice"
+                   placeholder="Price in ₹"
+                   required>
+
+
+            <div class="form-row">
+
+                <input type="number"
+                       id="listingBedrooms"
+                       placeholder="Bedrooms">
+
+                <input type="number"
+                       id="listingBathrooms"
+                       placeholder="Bathrooms">
+
+            </div>
+
+
+            <input type="number"
+                   id="listingArea"
+                   placeholder="Area in sq.ft">
+
+
+            <input type="url"
+                   id="listingImage"
+                   placeholder="Property Image URL">
+
+
+            <input type="tel"
+                   id="listingPhone"
+                   placeholder="Contact Number"
+                   required>
+
+
+            <textarea id="listingDescription"
+                      rows="5"
+                      placeholder="Property Description"
+                      required></textarea>
+
+
+            <button type="submit"
+                    class="primary-btn">
+
+                Submit Property
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     LOGIN MODAL
+========================= -->
+
+<div class="modal"
+     id="loginModal">
+
+    <div class="modal-content login-modal">
+
+        <button class="close-modal">
+            &times;
+        </button>
+
+        <h2>
+            Welcome to <span>EstateHub</span>
+        </h2>
+
+        <form id="loginForm">
+
+            <input type="email"
+                   id="loginEmail"
+                   placeholder="Email"
+                   required>
+
+
+            <input type="password"
+                   id="loginPassword"
+                   placeholder="Password"
+                   required>
+
+
+            <button type="submit"
+                    class="primary-btn">
+
+                Login
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     TOAST
+========================= -->
+
+<div class="toast"
+     id="toast"></div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
